@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3 School</title>
+</head>
+<style>
+    .main {
+        margin-left: 150px;
+        margin-right: 150px;
+        background-color: black;
+    }
+
+    .header {
+        color: rgb(119, 154, 117);
+        text-align: center;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 15px 30px;
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 10px;
+        text-align: center;
+        margin-left: 42%;
+    }
+
+    button:hover {
+        background-color: rgb(206, 249, 126);
+        transition: 30px;
+    }
+
+    .image {
+        color: antiquewhite;
+        margin-left: 30%;
+        display: flex;
+        gap: 30px;
+
+    }
+
+    .content {
+        text-align: center;
+        color: aliceblue;
+        font-size: 20px;
+        margin-top: 15%;
+    }
+
+    .header {
+        color: aliceblue;
+    }
+
+    .tab {
+        color: rgb(195, 211, 243);
+        border: 3px solid rgb(202, 211, 192);
+        background-color: rgb(59, 73, 59);
+        border-radius: 10px;
+        width: 300px;
+        height: 400pxS;
+        margin-left: 10%;
+        margin-top: 20%;
+        font-size: 20px;
+    }
+    .d-flex
+    {
+        display: flex;
+        padding: 7px;
+    }
+    .d-flex {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+        }
+
+        .d-flex:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for a floating effect */
+        }
+        .tab {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: box-shadow 0.3s ease; /* Shadow effect on hover */
+        }
+
+        .tab:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Slight shadow when hovering over the plan */
+        }
+
+        .tab h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .tab p {
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        .tab ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .tab ul li {
+            margin: 8px 0;
+        }
+
+        .tab button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .tab button:hover {
+            background-color: #0056b3; /* Darker shade when hovering the button */
+        }
+</style>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <h1 style="font-size:70px;">Create Website with HTML and JavaScript</h1>
+            <h2>Host Websites with <a href="W3Schools Spaces" style="text-decoration-line: none;"> W3Schools Spaces</a>
+            </h2>
+        </div>
+        <div class="link" style="align-items: center;">
+            <button>Get Start for free</button>
+        </div>
+        <div class="image">
+            <div>
+                <img src="https://www.w3schools.com/spaces/puzzle.svg">
+                <h3>Practice</h3>
+                <p>Coding kill</p>
+            </div>
+            <div style="margin-left: 40%;">
+                <img src="https://www.w3schools.com/spaces/boxes.svg">
+                <h3>Build</h3>
+                <p>Projects</p>
+            </div>
+        </div>
+        <div style="margin-left: 30%; color: rgb(187, 191, 194);">
+            <img src="https://www.w3schools.com/spaces/globe.svg">
+            <h3>Host</h3>
+            <p>Securely</p>
+        </div>
+        <div class="content">
+            <h1>Choose your Plan</h1>
+            <p>By subscribing to a plan you support the W3Schools mission to make
+                learning available to everyone <br> no matter their background.</p>
+        </div>
+
+        <div class="d-flex">
+            <div class="tab">
+                <h3>Free</h3>
+                <p>$0</p>
+                <hr>
+                <p>This is for you that are beginning to explore coding and web development</p>
+                <ul>
+                    <li>Build and host 1 static website</li>
+                    <li>100 credits/month </li>
+                    <li>NO support</li>
+                </ul>
+                <button>Get Free</butto>
+            </div>
+            <div class="tab">
+                <h3>W3 Schools Plus</h3>
+                <p>$145</p>
+                <hr>
+                <p>
+                    This is for you that want to learn and reach your goals faster. Build fullstack projects, ad free experience.</p>
+                <ul>
+                    <li>Ad-free experience</li>
+                    <li>Build and host 15 static websites </li>
+                    <li>Build and host 1 full stack server</li>
+                    <li>Choose from 18 frameworks / languages</li>
+                    <li>Choose from 75+ templates</li>
+                    <li>50000 credits/month</li>
+                    <li>Priority Support</li>
+                    <li>Cancel anytime</li>
+                </ul>
+                <button>Get Plus</button>
+            </div>
+    
+
+        </div>
+        
+    </div>
+</body>
+
+</html>

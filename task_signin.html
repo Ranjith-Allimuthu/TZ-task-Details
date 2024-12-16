@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+</head>
+<style>
+    .main {
+        border: 1px solid;
+        border-radius: 3px;
+        width: 400px;
+        border-style: groove;
+        border-block-end-color: aqua;
+        box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.3);
+        margin-left: 30%;
+        margin-top: 10px;
+        background-color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    input {
+        width: 250px;
+        padding: 10px;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+
+    button {
+        width: 200px;
+        padding: 10px;
+        border-radius: 30px;
+        border: hidden;
+        background-color: rgb(34, 34, 216);
+        color: white;
+        font-size: large;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    } 
+    .but
+        {
+            display: flex;
+        }
+
+    .error {
+        color: red;
+    }
+    a
+    {
+        text-decoration: none;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <h1 style="font-size: 40px;">Sign In</h1>
+        <form onsubmit="return MyFunction(event)">
+            <input type="text" id="fname" placeholder="First Name"><br>
+            <span id="errorfname" class="error"></span><br>
+            <input type="text" id="lname" placeholder="Last Name"><br>
+            <span id="errorlname" class="error"></span><br>
+            <input type="email" id="email" placeholder="Email"><br>
+            <span id="erroremail" class="error"></span><br>
+            <input type="tel" id="phonenumber" placeholder="Phone Number"><br>
+            <span id="errorphonenumber" class="error"></span><br>
+            <input type="date" id="birthdate" placeholder="Birth Date"><br>
+            <span id="errorbirthdate" class="error"></span><br>
+            <input type="password" id="password" placeholder="Password"><br>
+            <span id="errorpassword" class="error"></span><br>
+            <div class="but">
+                <button type="submit">Sign In</button><br>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+        <p>Already have an Account?</p><a href="Task_LogIn.html"><p>Log In</p></a>
+    </div>
+</body>
+
+<script>
+    function MyFunction(event) {
+        event.preventDefault();
+        document.getElementById("errorfname").innerHTML = "";
+        document.getElementById("errorlname").innerHTML = "";
+        document.getElementById("erroremail").innerHTML = "";
+        document.getElementById("errorphonenumber").innerHTML = "";
+        document.getElementById("errorbirthdate").innerHTML = "";
+        document.getElementById("errorpassword").innerHTML = "";
+
+       
+        let a = document.getElementById("fname").value;
+        let b = document.getElementById("lname").value;
+        let c = document.getElementById("email").value;
+        let d = document.getElementById("phonenumber").value;
+        let e = document.getElementById("birthdate").value;
+        let f = document.getElementById("password").value;
+
+        let isvalid = true;
+
+        
+        let namePattern = /^[A-Za-z\s]+$/;
+        if (!namePattern.test(a) || a.trim() === "") {
+            document.getElementById("errorfname").innerHTML = "Please enter a valid first name (not a number).";
+            isvalid = false;
+        }
+        if (!namePattern.test(b) || b.trim() === "") {
+            document.getElementById("errorlname").innerHTML = "Please enter a valid last name (not a number).";
+            isvalid = false;
+        }
+
+        let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(c)) {
+            document.getElementById("erroremail").innerHTML = "Please enter a valid email.";
+            isvalid = false;
+        }
+
+    
+        if (isNaN(parseInt(d)) || d.length !== 10) {
+            document.getElementById("errorphonenumber").innerHTML = "Please enter a valid phone number (10 digits).";
+            isvalid = false;
+        }
+
+        
+        let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        if (!passwordPattern.test(f)) {
+            document.getElementById("errorpassword").innerHTML = "Password must be at least 8 characters long, contain one letter, one number, and one special character (@$!%*?&).";
+            isvalid = false;
+        }
+        if (isvalid) {
+            alert("Form submitted successfully!");
+        }
+    }
+</script>
+
+</html>

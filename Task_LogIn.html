@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <style>
+        .box {
+            border: 1px solid;
+            border-radius: 3px;
+            width: 400px;
+            border-style: groove;
+            border-block-end-color: aqua;
+            box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.3);
+            margin-left: 30%;
+            margin-top: 10px;
+            background-color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        input {
+            width: 250px;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 150px;
+            padding: 10px;
+            border-radius: 10px;
+            border: hidden;
+            border-radius: 30px;
+            background-color: rgb(34, 34, 216);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: large; 
+
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Log In</h1>
+        <form onsubmit="return MyFunction(event)">
+            <input type="email" id="mail" placeholder="Email" /><br>
+            <span id="erroremail" class="error"></span>
+            <input type="password" id="password" placeholder="Password" /><br>
+            <span id="errorpassword" class="error"></span>
+            <button type="submit">Sign Up</button>
+            <button type="button" onclick="window.history.back()"> Back</button>
+        </form>
+    </div>
+
+<script> 
+
+    function MyFunction(event) {
+        document.getElementById("erroremail").innerHTML = "";
+        document.getElementById("errorpassword").innerHTML = "";
+
+       
+        let b = document.getElementById("mail").value;
+        let c = document.getElementById("password").value;
+
+        let isvalid = true;
+
+        
+        let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(b)) {
+            document.getElementById("erroremail").innerHTML = "Please enter a valid email.";
+            isvalid = false;
+        }
+
+       
+        let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        if (!passwordPattern.test(c)) {
+            document.getElementById("errorpassword").innerHTML = "Password must be at least 8 characters long, contain one letter, one number, and one special character (@$!%*?&).";
+            isvalid = false;
+        }
+
+        
+        if (!isvalid) {
+            event.preventDefault(); 
+        } else {
+            alert("Form submitted successfully!");
+        } 
+      
+
+    }
+</script>
+</body>
+</html>

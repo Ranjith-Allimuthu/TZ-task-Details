@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array list</title>
+</head>
+<body>
+    <h1>Java Script Arrays List</h1>
+    <h3>Looping an Arrays </h3>
+    <p id="demo"></p>
+    <script>
+        
+            const fruits = ["Apple","Orange","Banana","Grapes","Mango","PineApple"];
+            x=fruits.length;
+            let text="<ul>"
+                for(i=0;i<x;i++)
+            {
+                text+="<li> "+ fruits[i] +"</li>";
+            }
+            text+="</ul>"
+
+        
+        document.getElementById("demo").innerHTML=text;
+    </script>
+</body>
+</html>

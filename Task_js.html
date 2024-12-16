@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task_js</title>
+</head>
+<style>
+    .header {
+        text-align: center;
+        color: rgb(90, 60, 15);
+        font-size: 30px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .file {
+        margin-left: 18%;
+        width: 200px;
+    }
+
+    hr {
+        width: 320px;
+        margin-left: 0%;
+    }
+
+    input {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 300px;
+    }
+
+    button {
+        width: 200px;
+        color: rgb(27, 219, 13);
+        font-size: 20px;
+    }
+
+    .error {
+        color: red;
+        font-size: 12px;
+    }
+    .but
+    {
+        display: flex;
+        gap: 30px;
+    }
+    
+</style>
+
+<body>
+    <div class="header">
+        <h1>Task by using JavaScript</h1>
+        <h2>Student Data </h2>
+    </div>
+    <div class="file">
+        <form>
+            <label for="name">NAME :</label><br>
+            <input type="text" id="name"><br>
+            <span id="errorname" class="error"></span><br>
+            <hr>
+            <label for="mail">MAIL ID :</label><br>
+            <input type="email" id="mail"><br>
+            <span id="errormail" class="error"></span><br>
+            <hr>
+            <label for="number">PHONE NO :</label><br>
+            <input type="tel" id="number"><br>
+            <span id="errornumber" class="error"></span><br>
+            <hr><br>
+            <label for="pincode">PIN CODE :</label><br>
+            <input type="text" id="pincode"><br>
+            <span id="errorpin" class="error"></span><br>
+            <hr><br><br>
+         <div class="but">
+            <button type="button" onclick="myFunction()">Submit</button> 
+            <button type="reset" >Reset</button>
+         </div>
+            
+        </form>
+    </div>
+</body>
+<script>
+    function myFunction() {
+        document.getElementById("errorname").textContent = "";
+        document.getElementById("errormail").textContent = "";
+        document.getElementById("errornumber").textContent = "";
+        document.getElementById("errorpin").innerHTML="";
+
+        let x = document.getElementById("name").value;
+        let y = document.getElementById("mail").value;
+        let z = document.getElementById("number").value;
+        let pin = document.getElementById("pincode").value;
+        let isvalid = true;
+        if (!isNaN(x) || x.trim() === "") {
+            document.getElementById("errorname").innerHTML = "Please enter a valid NAME (not a number).";
+            isvalid = false;
+        }
+        let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(y)) {
+            document.getElementById("errormail").innerHTML = "Please enter a valid Email ID.";
+            isvalid = false;
+        }
+        if (isNaN(parseInt(z)) || z.length !== 10) {
+            document.getElementById("errornumber").innerHTML = "Please enter a valid number (10 digits).";
+            isvalid = false;
+        }
+        if(!/^\d{6}$/.test(pin))
+        {
+            document.getElementById("errorpin").innerHTML="please enter a valid pincode.";
+            isvalid=false;
+        }
+        if (isvalid) {
+            alert("Form submitted successfully!");
+        }
+    }
+</script>
+
+</html>
